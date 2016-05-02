@@ -2,18 +2,5 @@
 Final project for Mobile Computing Spring 2016
 
 
-Goals for the week:
-Make skeleton (MVC) for:
--settings
--news feed
--add friend
--random group
--update status
--invite someone to meal
-
-Segue everything you can segue
-
-Learn how to TableView
--watch videos
-
-Email Stephen Hauser
+am now 30 minutes into the video and things look pretty good
+that being said, there's no back button when you segue to a profile...
