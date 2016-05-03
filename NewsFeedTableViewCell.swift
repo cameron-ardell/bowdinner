@@ -1,0 +1,25 @@
+//
+//  NewsFeedTableViewCell.swift
+//  testingTables
+//
+//  Created by Sophia M. Ardell on 5/1/16.
+//  Copyright © 2016 Sophia M. Ardell. All rights reserved.
+//
+
+import UIKit
+
+
+class NewsFeedTableViewCell: UITableViewCell {
+
+   // weak var dataSource: NewsFeedCellDataSource?
+    
+    @IBOutlet weak var myLabel: UILabel!
+    
+    var personName: String = ""
+    
+    //var statusInformation: [String] = []
+
+    
+
+
+}
