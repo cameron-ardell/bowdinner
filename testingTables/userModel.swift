@@ -13,33 +13,38 @@ class userModel: NSObject {
     var ID: Int?
     var email: String?
     var password: String?
-    var name: String?
+    var firstName: String?
+    var lastName: String?
     var year: Int?
     var major: String?
-    var status: Int? //Bit. 1 = True. 0 = False.
-    var time: String?
-    var place: String?
-    //var bio: String?
+    var bio: String?
+    
+    
+    var statusOne: Int? //Bit. 1 = True. 0 = False.
+    var timeOne: String?
+    var placeOne: String?
     
     override init() {
     }
     
-    init(ID:Int, email: String, password: String, name:String, year:Int, major:String, status:Int, time:String, place: String) {
+    init(ID:Int, email: String, password: String, firstName:String, lastName: String, year:Int, major:String, bio: String, statusOne:Int, timeOne:String, placeOne: String) {
         self.ID = ID
         self.email = email
         self.password = password
-        self.name = name
+        self.firstName = firstName
+        self.lastName = lastName
         self.year = year
         self.major = major
-        self.status = status
-        self.time = time
-        self.place = place
-        //self.bio = bio
+        self.statusOne = statusOne
+        self.timeOne = timeOne
+        self.placeOne = placeOne
+        self.bio = bio
 
     }
     
     override var description: String {
-        return "ID: \(ID), Email: \(email), Name: \(name), Year: \(year), Major: \(major) Status: \(status), Time: \(time), Place: \(place)"
+        //return "ID: \(ID), Email: \(email), Name: \(name), Year: \(year), Major: \(major) Status: \(status), Time: \(time), Place: \(place)"
+        return "ID: \(ID), Email: \(email), Name: \(firstName) \(lastName), Year: \(year), Major: \(major), Bio \(bio), Status: \(statusOne), Time: \(timeOne), Place: \(placeOne)"
     }
     
 }

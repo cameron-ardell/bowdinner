@@ -28,6 +28,13 @@ class OtherProfileViewController: UIViewController{
     var nameString: [String]?
     
     
+    @IBOutlet weak var mealOneInfo: UILabel!
+    @IBOutlet weak var mealTwoInfo: UILabel!
+    @IBOutlet weak var mealThreeInfo: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

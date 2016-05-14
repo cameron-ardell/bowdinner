@@ -14,7 +14,22 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
     var statusArray = [["Sophie", "Ardell", "11:30 AM", "1 PM", "Moulton"], ["Marcus", "Christiansen", "9:30 AM", "10 AM", "Thorne"], ["Son", "Ngo Duy", "unavailable", "unavailable",
         "unvailable"]]
     
-    var allFriendsArray = [["Sophie", "Ardell", "2017", "Physics and Computer Science", "One time I found Waldo."], ["Son", "Ngo Duy", "2017", "Computer Science and Math", "I live in Searles 224!"], ["Marcus","Christiansen", "2017", "Computer Science", "Ariana Grande is dank"]]
+    var allFriendsArray = [["Sophie", "Ardell", "2017", "Physics and Computer Science", "Load short bio that they fill in here. And now I need to add more words because xcode is having an autolayout bitch fit. This is sort of frustrating. Stupid autolayout is so stupid."], ["Son", "Ngo Duy", "2017", "Computer Science and Math", "I live in Searles 224!"], ["Marcus","Christiansen", "2017", "Computer Science", "Ariana Grande is dank"]]
+    
+    var sophie = userModel(ID: 7224, email: "sardell", password: "hiMarcus", firstName: "Sophie", lastName: "Ardell", year: 2017, major: "Physics and Computer Science", bio: "One time I found Waldo.", statusOne: 1, timeOne: "9:30 AM to 10 AM", placeOne: "Moulton")
+    
+    var marcus = userModel(ID: 7246, email: "mechrist", password: "yo", firstName: "Marcus", lastName: "Christiansen", year: 2017, major: "Computer Science", bio: "Ariana Grande is dank", statusOne: 1, timeOne: "11:30 AM to 1 PM", placeOne: "Thorne")
+    
+    var son = userModel(ID: 7476, email: "sngo", password: "224", firstName: "Son", lastName: "Ngo Duy", year: 2017, major: "Computer Science and Math", bio: "I live in 224!", statusOne: 0, timeOne: "no", placeOne: "no")
+    
+    
+    var users = [String: userModel]()
+    
+    //this thing yells and says it needs a declaration... to figure out later
+    //users["Sophie"] = userModel(ID: 7224, email: "sardell", password: "hiMarcus", firstName: "Sophie", lastName: "Ardell", year: 2017, major: "Physics and Computer Science", bio: "One time I found Waldo.", statusOne: 1, timeOne: "9:30 AM to 10 AM", placeOne: "Moulton")
+
+    
+  
     
     
     //checks if user has friend with specific name
@@ -78,8 +93,9 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+       
 
+       
         // Configure the cell...
         let individual = statusArray[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath) as! NewsFeedTableViewCell
@@ -106,7 +122,7 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
         cell.userTime.adjustsFontSizeToFitWidth = true
         cell.userLocation.adjustsFontSizeToFitWidth = true
 
-        
+       
         
         
         
