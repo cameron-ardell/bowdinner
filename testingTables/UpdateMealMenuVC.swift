@@ -53,9 +53,10 @@ class UpdateMealMenuVC: UIViewController {
     }
     
     @IBAction func backToNewsFeed(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let presentingVC = self.presentingViewController
+        self.dismissViewControllerAnimated(true, completion: {
+            presentingVC!.dismissViewControllerAnimated(false, completion: {})
+        })
     }
-
-
 
 }

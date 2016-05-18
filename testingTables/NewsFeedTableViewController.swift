@@ -8,7 +8,83 @@
 
 import UIKit
 
+
+protocol MenuActionDelegate {
+    func openSegue(segueName: String, sender: AnyObject?)
+}
+
+
 class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource, allUserDataProtocol {
+    
+    //
+    //
+    //
+    
+    let interactor = Interact()
+    
+    @IBAction func openMenu(sender: AnyObject) {
+        performSegueWithIdentifier("openMenu", sender: nil)
+    }
+    
+    @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .Right)
+        
+        MenuHelper.mapGestureStateToInteractor(
+            sender.state,
+            progress: progress,
+            interactor: interactor){
+                self.performSegueWithIdentifier("openMenu", sender: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationViewController = segue.destinationViewController as? NewMenuViewController {
+            destinationViewController.transitioningDelegate = self
+            destinationViewController.interactor = interactor
+            destinationViewController.menuActionDelegate = self
+        }
+        
+        else {
+            
+            
+            var destination = segue.destinationViewController
+            if let navCon = destination as? UINavigationController {
+                destination = navCon.visibleViewController!
+            }
+            
+            if let hvc = destination as? OtherProfileViewController {
+                
+                if let identifier = segue.identifier{
+                    
+                    if identifier == "ShowOtherProfileSegue" {
+                        let seletectedIndexPath = tableView.indexPathForCell(sender as! NewsFeedTableViewCell)
+                        let currentCell = tableView.cellForRowAtIndexPath((seletectedIndexPath)!) as? NewsFeedTableViewCell
+                        hvc.dataSource = self
+                        hvc.nameString = currentCell?.personName
+                        
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    //
+    //
+    //
     
     var feedItems: NSArray = NSArray()
     
@@ -119,7 +195,7 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
@@ -142,7 +218,40 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
         
             }
         }
-    }
+    } */
     
 
+}
+
+
+
+
+
+
+
+
+extension NewsFeedTableViewController: UIViewControllerTransitioningDelegate {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentMenuAnimator()
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissMenuAnimator()
+    }
+    
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    
+    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+}
+
+extension NewsFeedTableViewController : MenuActionDelegate {
+    func openSegue(segueName: String, sender: AnyObject?) {
+        dismissViewControllerAnimated(true){
+            self.performSegueWithIdentifier(segueName, sender: sender)
+        }
+    }
 }

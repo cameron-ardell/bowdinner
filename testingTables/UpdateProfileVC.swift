@@ -48,14 +48,13 @@ class UpdateProfileVC: UIViewController, NSURLSessionDelegate {
         else {
             
             let alertController = UIAlertController(title: "Success", message: "Profile Changed", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: { action in
+                let presentingVC = self.presentingViewController
+                self.dismissViewControllerAnimated(true, completion: {
+                    presentingVC!.dismissViewControllerAnimated(false, completion: {})
+                })
+            }))
             self.presentViewController(alertController, animated: true, completion: nil)
-            
-            let presentingVC = self.presentingViewController
-            self.dismissViewControllerAnimated(true, completion: {
-                presentingVC!.dismissViewControllerAnimated(false, completion: {})
-            })
-            
             
         }
         

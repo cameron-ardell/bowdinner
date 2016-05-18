@@ -27,7 +27,11 @@
 		43AC0CF81CD67B1F00922B23 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC0CF71CD67B1F00922B23 /* OtherProfileViewController.swift */; };
 		43AC0D3C1CD7059300922B23 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC0D3B1CD7059300922B23 /* NewsFeedTableViewCell.swift */; };
 		43B4AE691CD94A1400E64C21 /* InvitePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4AE681CD94A1400E64C21 /* InvitePersonViewController.swift */; };
-		43B4AE6B1CD9899100E64C21 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4AE6A1CD9899100E64C21 /* MenuViewController.swift */; };
+		43DA1FC91CEBE51E001E4ED3 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA1FC61CEBE51E001E4ED3 /* MenuHelper.swift */; };
+		43DA1FCA1CEBE51E001E4ED3 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA1FC71CEBE51E001E4ED3 /* PresentMenuAnimator.swift */; };
+		43DA1FCB1CEBE51E001E4ED3 /* NewMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA1FC81CEBE51E001E4ED3 /* NewMenuViewController.swift */; };
+		43DA1FCF1CEBE5D5001E4ED3 /* DismissMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA1FCE1CEBE5D5001E4ED3 /* DismissMenuAnimator.swift */; };
+		43DA1FD11CEBE824001E4ED3 /* Interact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA1FD01CEBE824001E4ED3 /* Interact.swift */; };
 		E4BB01521CE2613F00FEB7D9 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB01511CE2613F00FEB7D9 /* AddFriendVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +79,11 @@
 		43AC0CF71CD67B1F00922B23 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OtherProfileViewController.swift; path = ../OtherProfileViewController.swift; sourceTree = "<group>"; };
 		43AC0D3B1CD7059300922B23 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsFeedTableViewCell.swift; path = ../NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
 		43B4AE681CD94A1400E64C21 /* InvitePersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePersonViewController.swift; sourceTree = "<group>"; };
-		43B4AE6A1CD9899100E64C21 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		43DA1FC61CEBE51E001E4ED3 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
+		43DA1FC71CEBE51E001E4ED3 /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentMenuAnimator.swift; sourceTree = "<group>"; };
+		43DA1FC81CEBE51E001E4ED3 /* NewMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMenuViewController.swift; sourceTree = "<group>"; };
+		43DA1FCE1CEBE5D5001E4ED3 /* DismissMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissMenuAnimator.swift; sourceTree = "<group>"; };
+		43DA1FD01CEBE824001E4ED3 /* Interact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interact.swift; sourceTree = "<group>"; };
 		E4BB01511CE2613F00FEB7D9 /* AddFriendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				43573D2D1CCEB5DB00F3782C /* AppDelegate.swift */,
-				43B4AE6A1CD9899100E64C21 /* MenuViewController.swift */,
 				E4BB01511CE2613F00FEB7D9 /* AddFriendVC.swift */,
 				432B0E101CEB91140086181E /* loginModel.swift */,
 				432B0E111CEB91140086181E /* allUserDataModel.swift */,
@@ -144,6 +151,11 @@
 				43AC0CF71CD67B1F00922B23 /* OtherProfileViewController.swift */,
 				43B4AE681CD94A1400E64C21 /* InvitePersonViewController.swift */,
 				4368ABB61CE259D4006B0561 /* UpdateProfileVC.swift */,
+				43DA1FC61CEBE51E001E4ED3 /* MenuHelper.swift */,
+				43DA1FC71CEBE51E001E4ED3 /* PresentMenuAnimator.swift */,
+				43DA1FC81CEBE51E001E4ED3 /* NewMenuViewController.swift */,
+				43DA1FCE1CEBE5D5001E4ED3 /* DismissMenuAnimator.swift */,
+				43DA1FD01CEBE824001E4ED3 /* Interact.swift */,
 				43573D311CCEB5DB00F3782C /* Main.storyboard */,
 				43573D341CCEB5DB00F3782C /* Assets.xcassets */,
 				43573D361CCEB5DB00F3782C /* LaunchScreen.storyboard */,
@@ -303,8 +315,10 @@
 			files = (
 				439F59C11CEA920400510594 /* UpdateSpecificMealViewController.swift in Sources */,
 				438F8D421CD82AC30070D461 /* RandomizeViewController.swift in Sources */,
+				43DA1FCA1CEBE51E001E4ED3 /* PresentMenuAnimator.swift in Sources */,
+				43DA1FCF1CEBE5D5001E4ED3 /* DismissMenuAnimator.swift in Sources */,
+				43DA1FCB1CEBE51E001E4ED3 /* NewMenuViewController.swift in Sources */,
 				432B0E171CEB91140086181E /* allUserDataModel.swift in Sources */,
-				43B4AE6B1CD9899100E64C21 /* MenuViewController.swift in Sources */,
 				43AC0D3C1CD7059300922B23 /* NewsFeedTableViewCell.swift in Sources */,
 				E4BB01521CE2613F00FEB7D9 /* AddFriendVC.swift in Sources */,
 				432B0E161CEB91140086181E /* loginModel.swift in Sources */,
@@ -313,11 +327,13 @@
 				432B0E1A1CEB91140086181E /* SignUpVC.swift in Sources */,
 				438F8D441CD834200070D461 /* DiningHallPicker.swift in Sources */,
 				43AC0CF81CD67B1F00922B23 /* OtherProfileViewController.swift in Sources */,
+				43DA1FC91CEBE51E001E4ED3 /* MenuHelper.swift in Sources */,
 				439F59C31CEA9CC100510594 /* UpdateMealMenuVC.swift in Sources */,
 				432B0E181CEB91140086181E /* LogInVCViewController.swift in Sources */,
 				43573D2E1CCEB5DB00F3782C /* AppDelegate.swift in Sources */,
 				432B0E191CEB91140086181E /* NewsFeedTableViewController.swift in Sources */,
 				4368ABB71CE259D5006B0561 /* UpdateProfileVC.swift in Sources */,
+				43DA1FD11CEBE824001E4ED3 /* Interact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
