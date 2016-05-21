@@ -60,7 +60,11 @@ class LogInVCViewController: UIViewController {
             
             let alertController = UIAlertController(title: "Success", message: "Sign In Successful", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: { action in self.dismissViewControllerAnimated(true, completion: nil)}))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.presentViewController(alertController, animated: true, completion: {
+                
+            let defaults = NSUserDefaults.standardUserDefaults()
+            //defaults.setObject(self.currUser, forKey: "clientProfile")
+            })
 
         }
         

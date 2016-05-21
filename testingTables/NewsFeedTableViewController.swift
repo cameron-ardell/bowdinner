@@ -144,9 +144,15 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
         if (signedIn == false) {
             self.performSegueWithIdentifier("goToLogin", sender: self)
             signedIn = true
+            
+            //print("\n\n" + NSUserDefaults.standardUserDefaults().objectForKey("clientProfile")!.firstName!)
         }
         
     }
+    
+    
+
+    
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusArray.count
@@ -165,7 +171,7 @@ class NewsFeedTableViewController: UITableViewController, OtherProfileDataSource
         
             cell.personName = [individual.firstName!, individual.lastName!]
         
-            cell.userName.text = "\(individual.firstName!), \(individual.lastName!)"
+            cell.userName.text = "\(individual.firstName!) \(individual.lastName!)"
         
             if individual.status1 == 0 {
                 cell.userAvailability.text = "Unavailable"
